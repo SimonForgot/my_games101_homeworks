@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <cmath>
+#include <ctime>
+#include<cstdlib>
 #include <random>
 
 #undef M_PI
@@ -30,11 +32,11 @@ inline  bool solveQuadratic(const float &a, const float &b, const float &c, floa
 
 inline float get_random_float()
 {
-    std::random_device dev;
-    std::mt19937 rng(dev());
-    std::uniform_real_distribution<float> dist(0.f, 1.f); // distribution in range [1, 6]
-
-    return dist(rng);
+    //std::random_device dev;
+    //std::mt19937 rng(dev());
+    //std::uniform_real_distribution<float> dist(0.f, 1.f); // distribution in range [1, 6]
+    //return dist(rng);
+    return float(rand())/RAND_MAX;
 }
 
 inline void UpdateProgress(float progress)

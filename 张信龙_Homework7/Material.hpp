@@ -6,8 +6,8 @@
 #define RAYTRACING_MATERIAL_H
 
 #include "Vector.hpp"
-
-enum MaterialType { DIFFUSE};
+#include "Brdfread.hpp"
+enum MaterialType { DIFFUSE,MEASURED};
 
 class Material{
 private:
@@ -93,7 +93,7 @@ public:
     Vector3f Kd, Ks;
     float specularExponent;
     //Texture tex;
-
+    double *brdf_p;
     inline Material(MaterialType t=DIFFUSE, Vector3f e=Vector3f(0,0,0));
     inline MaterialType getType();
     //inline Vector3f getColor();
@@ -142,12 +142,32 @@ Vector3f Material::sample(const Vector3f &wi, const Vector3f &N){
             
             break;
         }
+        case MEASURED:
+        {
+            // uniform sample on the hemisphere
+            float x_1 = get_random_float(), x_2 = get_random_float();
+            float z = std::fabs(1.0f - 2.0f * x_1);
+            float r = std::sqrt(1.0f - z * z), phi = 2 * M_PI * x_2;
+            Vector3f localRay(r*std::cos(phi), r*std::sin(phi), z);
+            return toWorld(localRay, N);
+            
+            break;
+        }
     }
 }
 
 float Material::pdf(const Vector3f &wi, const Vector3f &wo, const Vector3f &N){
     switch(m_type){
         case DIFFUSE:
+        {
+            // uniform sample probability 1 / (2 * PI)
+            if (dotProduct(wo, N) > 0.0f)
+                return 0.5f / M_PI;
+            else
+                return 0.0f;
+            break;
+        }
+        case MEASURED:
         {
             // uniform sample probability 1 / (2 * PI)
             if (dotProduct(wo, N) > 0.0f)
@@ -168,6 +188,22 @@ Vector3f Material::eval(const Vector3f &wi, const Vector3f &wo, const Vector3f &
             if (cosalpha > 0.0f) {
                 Vector3f diffuse = Kd / M_PI;
                 return diffuse;
+            }
+            else
+                return Vector3f(0.0f);
+            break;
+        }
+        case MEASURED:
+        {
+            // calculate the contribution of diffuse   model
+            //printf("%d\n",this->brdf_p);
+            float cosalpha = dotProduct(N, wo);
+            float cosbeta = dotProduct(N, wi);
+            
+            if (cosalpha > 0.0f && cosbeta>0.0f) {
+                double red,green,blue;
+                lookup_brdf_val(this->brdf_p, cosalpha, 0, cosbeta, 0, red, green, blue);
+                return Vector3f(red,green,blue);
             }
             else
                 return Vector3f(0.0f);

@@ -1,0 +1,3 @@
+/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/build/CMakeFiles/rebuild_cache.dir
+/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/build/CMakeFiles/edit_cache.dir
+/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/build/CMakeFiles/RayTracing.dir

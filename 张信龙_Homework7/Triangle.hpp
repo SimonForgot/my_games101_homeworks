@@ -250,7 +250,7 @@ inline Intersection Triangle::getIntersection(Ray ray)
     v = dotProduct(ray.direction, qvec) * det_inv;
     if (v < 0 || u + v > 1)
         return inter;
-    t_tmp = dotProduct(e2, qvec) * det_inv;
+    t_tmp = dotProduct(e2, qvec) * det_inv-0.00001;
 
     // TODO find ray triangle intersection
     if(t_tmp<0)return inter;

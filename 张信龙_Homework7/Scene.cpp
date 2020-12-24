@@ -63,6 +63,7 @@ Vector3f Scene::castRay(const Ray &ray, int depth) const
     // TO DO Implement Path Tracing Algorithm here
     auto p=this->intersect(ray);
     auto wo=-ray.direction;
+  
     if(p.happened==false)return Vector3f(0);
 
     if(p.m->hasEmission())return p.m->getEmission();

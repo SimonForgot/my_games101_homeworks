@@ -124,6 +124,7 @@ Intersection BVHAccel::getIntersection(BVHBuildNode* node, const Ray& ray) const
         if(node->object!=nullptr)
         {
             auto temp_isect=node->object->getIntersection(ray);
+            
             if(temp_isect.distance<isect.distance)isect=temp_isect;
         }
         else

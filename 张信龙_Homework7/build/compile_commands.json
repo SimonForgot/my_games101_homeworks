@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/build",
+  "command": "/bin/g++-9     -fopenmp -g   -std=gnu++17 -o CMakeFiles/RayTracing.dir/main.cpp.o -c /home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/main.cpp",
+  "file": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/main.cpp"
+},
+{
+  "directory": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/build",
+  "command": "/bin/g++-9     -fopenmp -g   -std=gnu++17 -o CMakeFiles/RayTracing.dir/Vector.cpp.o -c /home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/Vector.cpp",
+  "file": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/Vector.cpp"
+},
+{
+  "directory": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/build",
+  "command": "/bin/g++-9     -fopenmp -g   -std=gnu++17 -o CMakeFiles/RayTracing.dir/Scene.cpp.o -c /home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/Scene.cpp",
+  "file": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/Scene.cpp"
+},
+{
+  "directory": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/build",
+  "command": "/bin/g++-9     -fopenmp -g   -std=gnu++17 -o CMakeFiles/RayTracing.dir/BVH.cpp.o -c /home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/BVH.cpp",
+  "file": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/BVH.cpp"
+},
+{
+  "directory": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/build",
+  "command": "/bin/g++-9     -fopenmp -g   -std=gnu++17 -o CMakeFiles/RayTracing.dir/Renderer.cpp.o -c /home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/Renderer.cpp",
+  "file": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/Renderer.cpp"
+},
+{
+  "directory": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/build",
+  "command": "/bin/g++-9     -fopenmp -g   -std=gnu++17 -o CMakeFiles/RayTracing.dir/Brdfread.cpp.o -c /home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/Brdfread.cpp",
+  "file": "/home/simonforgot/proj/my_games101_homeworks/张信龙_Homework7/Brdfread.cpp"
+}
+]
